@@ -2,17 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package views;
+package view;
 
-import dao.Conexao;
-import dao.UsuarioDAO;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import model.Usuario;
+import controller.Frm_cad_user_controller;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,11 +14,14 @@ import model.Usuario;
  */
 public class Frm_cad_user extends javax.swing.JFrame {
 
+    private final Frm_cad_user_controller controller;
+
     /**
      * Creates new form frm_login
      */
     public Frm_cad_user() {
         initComponents();
+        controller = new Frm_cad_user_controller(this); 
     }
 
     /**
@@ -160,28 +157,8 @@ public class Frm_cad_user extends javax.swing.JFrame {
 
     private void btn_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarActionPerformed
         
-        Usuario user = new Usuario("Diego", "nunesnd", "123123");
-                
+        controller.cad_user();
         
-        try {
-            
-            Connection conexao = new Conexao().getConnection();
-            UsuarioDAO userDAO = new UsuarioDAO(conexao);
-            userDAO.insert(user);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Frm_cad_user.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        /*  TRECHO PENSADO PARA VALIDAÇÃO DE SENHAS SE IGUAIS
-        try {
-            if (txt_senha == txt_confirma_senha) {
-                JOptionPane.showMessageDialog(null, "funciona");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Senhas não conferem, verifique e tente novamente");
-        }
-        */
     }//GEN-LAST:event_btn_salvarActionPerformed
 
     private void txt_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nomeActionPerformed
@@ -189,6 +166,8 @@ public class Frm_cad_user extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txt_nomeActionPerformed
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -226,6 +205,32 @@ public class Frm_cad_user extends javax.swing.JFrame {
             }
         });
     }
+
+    public JTextField getTxt_login() {
+        return txt_login;
+    }
+
+    public void setTxt_login(JTextField txt_login) {
+        this.txt_login = txt_login;
+    }
+
+    public JTextField getTxt_nome() {
+        return txt_nome;
+    }
+
+    public void setTxt_nome(JTextField txt_nome) {
+        this.txt_nome = txt_nome;
+    }
+
+    public JPasswordField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setTxt_senha(JPasswordField txt_senha) {
+        this.txt_senha = txt_senha;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_excluir;

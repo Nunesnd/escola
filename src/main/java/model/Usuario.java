@@ -27,16 +27,7 @@ public class Usuario {
         this.senha = senha;
     }
     
-    
-
-    public Usuario(String login, String senha) {
-        
-        this.nome = nome;
-        this.login = login;
-        this.senha = senha;
-    }
-
-    
+       
     public int getId() {
         return id;
     }
