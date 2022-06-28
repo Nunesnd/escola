@@ -4,6 +4,8 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nunes
@@ -39,6 +41,11 @@ public class Frm_recupera_senha extends javax.swing.JFrame {
         Senha_recupera.setText("CPF:");
 
         enviar_recupera.setText("Solicitar");
+        enviar_recupera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviar_recuperaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,6 +79,11 @@ public class Frm_recupera_senha extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void enviar_recuperaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviar_recuperaActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Administrador de sistema comunicado. \nVocê será notificado em breve para registro de nova senha");
+    }//GEN-LAST:event_enviar_recuperaActionPerformed
 
     /**
      * @param args the command line arguments
