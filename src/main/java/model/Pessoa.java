@@ -16,76 +16,51 @@ import java.util.logging.Logger;
  */
 public class Pessoa {
     
-    protected int cpf;
+    protected int id;
     protected String nome;
     protected Date nascimento;
-    protected int turma;
-    protected char sexo;
+    protected String sexo;
+    protected String login;
+    protected String senha;
 
-    public Pessoa(int cpf, String nome, String nascimento, int turma, char sexo) {
-        this.cpf = cpf;
+    public Pessoa(String nome, String login, String senha) {
         this.nome = nome;
-        
-        try {
-            this.nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(nascimento);
-        } catch (ParseException ex) {
-            Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        this.turma = turma;
-        this.sexo = sexo;
+        this.login = login;
+        this.senha = senha;
     }
-
-    public Pessoa(int cpf, String nome, String nascimento, char sexo) {
-        this.cpf = cpf;
-        this.nome = nome;
-        try {
-            this.nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(nascimento);
-        } catch (ParseException ex) {
-            Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.sexo = sexo;
-    }
-
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Date getNascimento() {
-        return nascimento;
-    }
-
-    public void setNascimento(Date nascimento) {
-        this.nascimento = nascimento;
-    }
-
-    public int getTurma() {
-        return turma;
-    }
-
-    public void setTurma(int turma) {
-        this.turma = turma;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-        
     
+    public Pessoa(int id, String nome, String nascimento, String sexo) {
+        this.id = id;
+        this.nome = nome;
+        
+        try {
+            this.nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(nascimento);
+        } catch (ParseException ex) {
+            Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.sexo = sexo;
+    }
+
+    public Pessoa(String nome, String sexo, String login, String senha) {
+        this.nome = nome;
+        this.sexo = sexo;
+        this.login = login;
+        this.senha = senha;
+    }
+
+    
+    
+    public Pessoa(String nome, String nascimento, String sexo, String login, String senha) {
+        this.nome = nome;
+        try {
+            this.nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(nascimento);
+        } catch (ParseException ex) {
+            Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.sexo = sexo;
+        this.login = login;
+        this.senha = senha;
+    }
+        
 }

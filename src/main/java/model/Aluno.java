@@ -1,32 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.util.Date;
 
-/**
- *
- * @author nunes
- */
 public class Aluno extends Pessoa{
     
     public int idade;
+    public int turma;
     public float nota;
-
     
     //construtor para momento de matrícula
-    public Aluno(int cpf, String nome, String nascimento, int idade, char sexo) {
-        super(cpf, nome, nascimento, sexo);
+    public Aluno(int id, String nome, String nascimento, int idade, String sexo) {
+        super(id, nome, nascimento, sexo);
         this.idade = idade;
     }
+
+    public Aluno(int idade, String nome, String sexo, String login, String senha) {
+        super(nome, sexo, login, senha);
+        this.idade = idade;
+    }
+
+    public Aluno(String nome, String login, String senha) {
+        super(nome, login, senha);
+    }
+
+    public Aluno(int id, String nome, String nascimento, String sexo) {
+        super(id, nome, nascimento, sexo);
+    }
+
+    public Aluno(String nome, String sexo, String login, String senha) {
+        super(nome, sexo, login, senha);
+    }
+
+    public Aluno(String nome, String nascimento, String sexo, String login, String senha) {
+        super(nome, nascimento, sexo, login, senha);
+    }
+    
+    
     
     //construtor para alunos já matriculados anteriormente
-
-    public Aluno(int cpf, String nome, String nascimento, int idade, char sexo, int turma, float nota) {
-        super(cpf, nome, nascimento, turma, sexo);
+    public Aluno(int id, String nome, String nascimento, int idade, String sexo, int turma, float nota) {
+        super(id, nome, nascimento, sexo);
         this.idade = idade;
+        this.turma = turma;
         this.nota = nota;
     }
 
@@ -45,55 +60,61 @@ public class Aluno extends Pessoa{
     public void setNota(float nota) {
         this.nota = nota;
     }
-    
-    @Override
-    public int getCpf() {
-        return cpf;
+   
+    public int getId() {
+        return id;
     }
     
-    @Override
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
+    public void setId(int id) {
+        this.id = id;
     }
     
-    @Override
     public String getNome() {
         return nome;
     }
     
-    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }
     
-    @Override
     public Date getNascimento() {
         return nascimento;
     }
     
-    @Override
     public void setNascimento(Date nascimento) {
         this.nascimento = nascimento;
     }
     
-    @Override
     public int getTurma() {
         return turma;
     }
     
-    @Override
     public void setTurma(int turma) {
         this.turma = turma;
     }
 
-    @Override
     public char getSexo() {
         return sexo;
     }
 
-    @Override
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
 
