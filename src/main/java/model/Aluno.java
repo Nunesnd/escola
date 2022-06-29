@@ -35,8 +35,6 @@ public class Aluno extends Pessoa{
         super(nome, nascimento, sexo, login, senha);
     }
     
-    
-    
     //construtor para alunos já matriculados anteriormente
     public Aluno(int id, String nome, String nascimento, int idade, String sexo, int turma, float nota) {
         super(id, nome, nascimento, sexo);
@@ -93,7 +91,7 @@ public class Aluno extends Pessoa{
         this.turma = turma;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
@@ -117,7 +115,4 @@ public class Aluno extends Pessoa{
         this.senha = senha;
     }
 
-
-    
-    
 }

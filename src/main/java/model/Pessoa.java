@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.text.ParseException;
@@ -10,10 +6,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author nunes
- */
 public class Pessoa {
     
     protected int id;
@@ -49,8 +41,6 @@ public class Pessoa {
         this.senha = senha;
     }
 
-    
-    
     public Pessoa(String nome, String nascimento, String sexo, String login, String senha) {
         this.nome = nome;
         try {

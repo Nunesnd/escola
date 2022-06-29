@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import controller.Frm_cad_aln_controller;
@@ -12,14 +8,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import model.Aluno;
 
 public class Frm_cad_aln extends javax.swing.JFrame {
     
     private final Frm_cad_aln_controller controller;
-    /**
-     * Creates new form Frm_aluno
-     */
+
     public Frm_cad_aln() {
         initComponents();
         controller = new Frm_cad_aln_controller(this);
@@ -109,7 +105,7 @@ public class Frm_cad_aln extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,9 +119,7 @@ public class Frm_cad_aln extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel8)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(52, 52, 52)
-                                        .addComponent(jLabel7)))
+                                    .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_confirma_senha, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -180,24 +174,7 @@ public class Frm_cad_aln extends javax.swing.JFrame {
 
     private void btn_matricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_matricularActionPerformed
         // TODO add your handling code here:
-        //controller.cad_aln();
-        
-        String nome = txt_aln_nome.getText();
-        //String sexo = txt_sexo.getSelectedItem();
-        String sexo = txt_sexo.getText();
-        String login = txt_login.getText();
-        String senha = txt_senha.getText();
-        
-        Aluno aln = new Aluno(nome, sexo, login, senha);
-       
-        try {
-            Connection conexao = new Conexao().getConnection();
-            AlunoDAO alnDAO = new AlunoDAO(conexao);
-            alnDAO.insert(aln);
-        } catch (SQLException ex) {
-            Logger.getLogger(Frm_cad_aln.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        controller.matricula_aluno();
         
     }//GEN-LAST:event_btn_matricularActionPerformed
 
@@ -241,6 +218,40 @@ public class Frm_cad_aln extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getTxt_aln_nome() {
+        return txt_aln_nome;
+    }
+
+    public void setTxt_aln_nome(JTextField txt_aln_nome) {
+        this.txt_aln_nome = txt_aln_nome;
+    }
+
+    public JTextField getTxt_login() {
+        return txt_login;
+    }
+
+    public void setTxt_login(JTextField txt_login) {
+        this.txt_login = txt_login;
+    }
+
+    public JPasswordField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setTxt_senha(JPasswordField txt_senha) {
+        this.txt_senha = txt_senha;
+    }
+
+    public JTextField getTxt_sexo() {
+        return txt_sexo;
+    }
+
+    public void setTxt_sexo(JTextField txt_sexo) {
+        this.txt_sexo = txt_sexo;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_matricular;
     private javax.swing.JButton jButton1;

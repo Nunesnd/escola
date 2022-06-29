@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
-
 
 import dao.AlunoDAO;
 import dao.Conexao;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import view.Frm_cad_aln;
 import model.Aluno;
+import view.Frm_cad_aln;
 /**
  *
  * @author nunes
@@ -23,17 +21,25 @@ public class Frm_cad_aln_controller {
         this.view = view;
     }
     
-    public void cad_aln(){
+    public void matricula_aluno(){
         
-        //JOptionPane.showMessageDialog(null,"Olapaá");
-        String nome = view.get
-        //String login = view.getTxt_login().getText();
-                
-        Aluno aln = new Aluno (nome, sexo, login, senha);  
+        String nome = view.getTxt_aln_nome().getText();
+        String sexo = view.getTxt_sexo().getText();
+        String login = view.getTxt_login().getText();
+        String senha = view.getTxt_senha().getText();
         
-        Connection conexao = new Conexao().getConnection();
-        AlunoDAO alnDAO = new AlunoDAO(conexao);
-        AlunoDAO 
+        Aluno aln = new Aluno(nome, sexo, login, senha);
+       
+        try {
+            Connection conexao = new Conexao().getConnection();
+            AlunoDAO alnDAO = new AlunoDAO(conexao);
+            alnDAO.insert(aln);
+            
+            JOptionPane.showMessageDialog(null, "Aluno matriculado com sucesso!");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Frm_cad_aln.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     
