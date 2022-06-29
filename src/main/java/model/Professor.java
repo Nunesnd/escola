@@ -14,8 +14,8 @@ public class Professor extends Pessoa{
     
     public String materia;
 
-    public Professor(int cpf, String nome, String nascimento, char sexo, String materia, int turma) {
-        super(cpf, nome, nascimento, turma, sexo);
+    public Professor(String nome, String materia, String login, String senha) {
+        super(nome, login, senha);
         this.materia = materia;
     }
 
@@ -26,45 +26,29 @@ public class Professor extends Pessoa{
     public void setMateria(String materia) {
         this.materia = materia;
     }
-    @Override
-    public int getCpf() {
-        return cpf;
-    }
-    @Override
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-    @Override
+
     public String getNome() {
         return nome;
     }
-    @Override
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    @Override
-    public Date getNascimento() {
-        return nascimento;
+
+    public String getLogin() {
+        return login;
     }
-    @Override
-    public void setNascimento(Date nascimento) {
-        this.nascimento = nascimento;
+
+    public void setLogin(String login) {
+        this.login = login;
     }
-    @Override
-    public int getTurma() {
-        return turma;
+
+    public String getSenha() {
+        return senha;
     }
-    @Override
-    public void setTurma(int turma) {
-        this.turma = turma;
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
-    @Override
-    public char getSexo() {
-        return sexo;
-    }
-    @Override
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-        
+ 
 }

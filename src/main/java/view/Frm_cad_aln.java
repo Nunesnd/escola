@@ -1,16 +1,8 @@
 package view;
 
 import controller.Frm_cad_aln_controller;
-import dao.AlunoDAO;
-import dao.Conexao;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import model.Aluno;
 
 public class Frm_cad_aln extends javax.swing.JFrame {
     
