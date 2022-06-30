@@ -15,14 +15,14 @@ import javax.swing.JTextField;
  *
  * @author nunes
  */
-public class Frm_login extends javax.swing.JFrame {
+public class Frm_login_usr_view extends javax.swing.JFrame {
 
     private final Frm_login_controller controller;
 
     /**
      * Creates new form Frm_login
      */
-    public Frm_login() {
+    public Frm_login_usr_view() {
         initComponents();
         controller = new Frm_login_controller(this);
     }
@@ -124,7 +124,7 @@ public class Frm_login extends javax.swing.JFrame {
         try {
             controller.autenticar();
         } catch (SQLException ex) {
-            Logger.getLogger(Frm_login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frm_login_usr_view.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btn_enviarActionPerformed
@@ -146,20 +146,21 @@ public class Frm_login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_usr_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_usr_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_usr_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frm_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_usr_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frm_login().setVisible(true);
+                new Frm_login_usr_view().setVisible(true);
             }
         });
     }

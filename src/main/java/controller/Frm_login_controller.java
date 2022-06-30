@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Usuario;
-import view.Frm_login;
+import view.Frm_login_usr_view;
 import view.Frm_menu_principal;
 
 /**
@@ -19,9 +19,9 @@ import view.Frm_menu_principal;
  */
 public class Frm_login_controller {
     
-    private Frm_login view;
+    private Frm_login_usr_view view;
 
-    public Frm_login_controller(Frm_login view) {
+    public Frm_login_controller(Frm_login_usr_view view) {
         this.view = view;
     }
 
@@ -36,9 +36,6 @@ public class Frm_login_controller {
         UsuarioDAO userDAO = new UsuarioDAO(conecta);
         
         boolean existe = userDAO.autLoginPasswd(usrLog);
-        
-            
-        JOptionPane.showMessageDialog(null, "Resultado de usrLog: "+existe);
         
         Frm_menu_principal telaPrincipal = new Frm_menu_principal();
         telaPrincipal.setVisible(existe);

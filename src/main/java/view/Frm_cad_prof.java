@@ -5,6 +5,7 @@
 package view;
 
 import controller.Frm_cad_prof_controller;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -172,7 +173,19 @@ public class Frm_cad_prof extends javax.swing.JFrame {
     private void btn_cad_profActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cad_profActionPerformed
         // TODO add your handling code here:
         
-        controller.cad_prof();
+        String passwd1 = txt_senha.getText();
+        String passwd2 = txt_confrm_senha.getText();
+        
+        boolean confim = passwd1.equals(passwd2);
+        
+        if (confim){
+            
+            controller.cad_prof();
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "As senhas são diferentes, por favor verifique.");
+        }
+        
         
         
     }//GEN-LAST:event_btn_cad_profActionPerformed

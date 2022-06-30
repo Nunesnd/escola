@@ -39,9 +39,7 @@ public class UsuarioDAO {
         PreparedStatement statement = connection.prepareStatement(sql);
         boolean cond = statement.execute();
 
-//        ResultSet resultSet = statement.getResultSet();
-//        return resultSet.next();
-          return cond;
+        return cond;
     }
 
 }

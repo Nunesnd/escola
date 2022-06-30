@@ -172,16 +172,15 @@ public class Frm_cad_aln extends javax.swing.JFrame {
         String passwd1 = txt_senha.getText();
         String passwd2 = txt_confirma_senha.getText();
         
-        boolean cond = passwd1.equals(passwd2);
+        boolean confirm = passwd1.equals(passwd2);
         
-        if (cond){
+        if (confirm){
             controller.matricula_aluno();            
         }else{
             
             JOptionPane.showMessageDialog(null, "As senhas são diferentes, por favor verifique.");
         }
-        
-        
+                
     }//GEN-LAST:event_btn_matricularActionPerformed
 
     private void txt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_loginActionPerformed
