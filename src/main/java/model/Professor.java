@@ -19,6 +19,12 @@ public class Professor extends Pessoa{
         this.materia = materia;
     }
 
+    public Professor(String login, String senha) {
+        super(login, senha);
+    }
+    
+    
+
     public String getMateria() {
         return materia;
     }

@@ -29,7 +29,19 @@ public class ProfessorDAO {
         statement.execute();
         connection.close();
         
-        
     }
+
+    public boolean autLoginPasswd(Professor profLog) throws SQLException {
+           
+        String sql = "SELECT * FROM professor WHERE prof_login = '"+profLog.getLogin()+"' AND prof_senha = '"+profLog.getSenha()+"';";
+        
+        PreparedStatement statement = connection.prepareStatement(sql);
+        boolean cond = statement.execute();
+
+        return cond;
+    
+    }
+    
+    
     
 }

@@ -4,10 +4,7 @@
  */
 package view;
 
-import controller.Frm_login_aln_controller;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import controller.Frm_login_prof_controller;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -15,16 +12,16 @@ import javax.swing.JTextField;
  *
  * @author nunes
  */
-public class Frm_login_aluno_view extends javax.swing.JFrame {
+public class Frm_login_prof_view extends javax.swing.JFrame {
 
-    private final Frm_login_aln_controller controller;
+    private final Frm_login_prof_controller controller;
 
     /**
-     * Creates new form Frm_login_aluno_view
+     * Creates new form Frm_login_prof_view
      */
-    public Frm_login_aluno_view() {
+    public Frm_login_prof_view() {
         initComponents();
-        controller = new Frm_login_aln_controller(this);
+        controller = new Frm_login_prof_controller(this);
     }
 
     /**
@@ -37,11 +34,10 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txt_login = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        txt_login = new javax.swing.JTextField();
         txt_senha = new javax.swing.JPasswordField();
-        btn_entrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btn_recupera_senha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,17 +46,19 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
 
         jLabel2.setText("Senha");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("Acesso do aluno");
-
-        btn_entrar.setBackground(new java.awt.Color(0, 0, 255));
-        btn_entrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_entrar.setForeground(new java.awt.Color(204, 255, 255));
-        btn_entrar.setText("Entrar");
-        btn_entrar.addActionListener(new java.awt.event.ActionListener() {
+        txt_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_entrarActionPerformed(evt);
+                txt_loginActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(255, 0, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(51, 0, 0));
+        jButton1.setText("Entrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -77,43 +75,40 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_login)
-                            .addComponent(jLabel1)
-                            .addComponent(txt_senha)
-                            .addComponent(btn_entrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_recupera_senha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(109, 109, 109)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(txt_login)
+                    .addComponent(txt_senha)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_recupera_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(53, 53, 53)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(btn_entrar)
-                .addGap(41, 41, 41)
+                .addGap(63, 63, 63)
+                .addComponent(jButton1)
+                .addGap(48, 48, 48)
                 .addComponent(btn_recupera_senha)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_loginActionPerformed
 
     private void btn_recupera_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recupera_senhaActionPerformed
         // TODO add your handling code here:
@@ -121,16 +116,12 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
         telaRecuperaSenha.setVisible(true);
     }//GEN-LAST:event_btn_recupera_senhaActionPerformed
 
-    private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-        try {
-            // TODO add your handling code here:
-
-            controller.autenticar();
-        } catch (SQLException ex) {
-            Logger.getLogger(Frm_login_aluno_view.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         
-    }//GEN-LAST:event_btn_entrarActionPerformed
+        controller.autentica();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,20 +140,20 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_login_aluno_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_login_aluno_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_login_aluno_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frm_login_aluno_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_login_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frm_login_aluno_view().setVisible(true);
+                new Frm_login_prof_view().setVisible(true);
             }
         });
     }
@@ -186,11 +177,10 @@ public class Frm_login_aluno_view extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_entrar;
     private javax.swing.JButton btn_recupera_senha;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txt_login;
     private javax.swing.JPasswordField txt_senha;
     // End of variables declaration//GEN-END:variables
