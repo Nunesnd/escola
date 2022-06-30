@@ -5,6 +5,9 @@
 package view;
 
 import controller.Frm_login_controller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -117,10 +120,13 @@ public class Frm_login extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_recupera_senhaActionPerformed
 
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
-        // TODO add your handling code here:
-        //Frm_principal telaPrincipal = new Frm_principal();
-        //telaPrincipal.setVisible(true);
-        controller.autenticar();
+ 
+        try {
+            controller.autenticar();
+        } catch (SQLException ex) {
+            Logger.getLogger(Frm_login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btn_enviarActionPerformed
 
     /**

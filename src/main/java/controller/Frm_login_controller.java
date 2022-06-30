@@ -37,15 +37,12 @@ public class Frm_login_controller {
         
         boolean existe = userDAO.autLoginPasswd(usrLog);
         
-        if(existe){        
-            Frm_menu_principal telaPrincipal = new Frm_menu_principal();
-            telaPrincipal.setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(view, "Usuário ou senha inválidos.");
-        }
+            
+        JOptionPane.showMessageDialog(null, "Resultado de usrLog: "+existe);
         
-        
-        
+        Frm_menu_principal telaPrincipal = new Frm_menu_principal();
+        telaPrincipal.setVisible(existe);
+
         
     }
     

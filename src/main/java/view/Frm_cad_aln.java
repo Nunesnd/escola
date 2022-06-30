@@ -167,7 +167,20 @@ public class Frm_cad_aln extends javax.swing.JFrame {
 
     private void btn_matricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_matricularActionPerformed
         // TODO add your handling code here:
-        controller.matricula_aluno();
+        //controller.matricula_aluno();
+        
+        String passwd1 = txt_senha.getText();
+        String passwd2 = txt_confirma_senha.getText();
+        
+        boolean cond = passwd1.equals(passwd2);
+        
+        if (cond){
+            controller.matricula_aluno();            
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "As senhas são diferentes, por favor verifique.");
+        }
+        
         
     }//GEN-LAST:event_btn_matricularActionPerformed
 
