@@ -16,6 +16,12 @@ public class Usuario extends Pessoa{
         this.login = login;
         this.senha = senha;
     }
+    
+    public Usuario(String login, String senha) {
+        super(login, senha);
+        this.login = login;
+        this.senha = senha;
+    }
 
     public String getNome() {
         return nome;

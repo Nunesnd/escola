@@ -4,6 +4,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Usuario;
 
@@ -28,5 +29,16 @@ public class UsuarioDAO {
         connection.close();
         
     }
+
+    public boolean autLoginPasswd(Usuario usrLog) throws SQLException {
+        String sql = "select * from usuario where usr_nome = '"+usrLog.getLogin()+"' and usr_senha = '"+usrLog.getSenha()+"';";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.execute();
+        
+        ResultSet resultSet = statement.getResultSet();
+        
+        return resultSet.next();
+    }
+
     
 }

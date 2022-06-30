@@ -1,8 +1,12 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
+import controller.Frm_login_controller;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -10,11 +14,14 @@ package view;
  */
 public class Frm_login extends javax.swing.JFrame {
 
+    private final Frm_login_controller controller;
+
     /**
      * Creates new form Frm_login
      */
     public Frm_login() {
         initComponents();
+        controller = new Frm_login_controller(this);
     }
 
     /**
@@ -45,6 +52,9 @@ public class Frm_login extends javax.swing.JFrame {
 
         jLabel2.setText("Senha");
 
+        btn_enviar.setBackground(new java.awt.Color(0, 255, 0));
+        btn_enviar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_enviar.setForeground(new java.awt.Color(0, 51, 0));
         btn_enviar.setText("Entrar");
         btn_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +62,7 @@ public class Frm_login extends javax.swing.JFrame {
             }
         });
 
+        btn_recupera_senha.setBackground(new java.awt.Color(102, 102, 102));
         btn_recupera_senha.setText("Esqueci minha senha");
         btn_recupera_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,8 +118,9 @@ public class Frm_login extends javax.swing.JFrame {
 
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
         // TODO add your handling code here:
-        Frm_principal telaPrincipal = new Frm_principal();
-        telaPrincipal.setVisible(true);
+        //Frm_principal telaPrincipal = new Frm_principal();
+        //telaPrincipal.setVisible(true);
+        controller.autenticar();
     }//GEN-LAST:event_btn_enviarActionPerformed
 
     /**
@@ -144,6 +156,22 @@ public class Frm_login extends javax.swing.JFrame {
                 new Frm_login().setVisible(true);
             }
         });
+    }
+
+    public JTextField getTxt_login() {
+        return txt_login;
+    }
+
+    public void setTxt_login(JTextField txt_login) {
+        this.txt_login = txt_login;
+    }
+
+    public JPasswordField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setTxt_senha(JPasswordField txt_senha) {
+        this.txt_senha = txt_senha;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

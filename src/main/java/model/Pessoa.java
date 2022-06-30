@@ -21,6 +21,11 @@ public class Pessoa {
         this.senha = senha;
     }
     
+        public Pessoa(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
+    }
+    
     public Pessoa(int id, String nome, String nascimento, String sexo) {
         this.id = id;
         this.nome = nome;
