@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
-import view.Frm_cad_user;
+import view.Frm_cad_user_view;
 
 /**
  *
@@ -16,9 +16,9 @@ import view.Frm_cad_user;
  */
 public class Frm_cad_user_controller {
     
-    private Frm_cad_user view;
+    private Frm_cad_user_view view;
 
-    public Frm_cad_user_controller(Frm_cad_user view) {
+    public Frm_cad_user_controller(Frm_cad_user_view view) {
         this.view = view;
     }
     
@@ -39,7 +39,7 @@ public class Frm_cad_user_controller {
                 JOptionPane.showMessageDialog(null, "Usuário criado com sucesso!");
 
             } catch (SQLException ex) {
-                Logger.getLogger(Frm_cad_user.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Frm_cad_user_view.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
     

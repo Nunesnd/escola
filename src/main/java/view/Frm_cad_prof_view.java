@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  *
  * @author nunes
  */
-public class Frm_cad_prof extends javax.swing.JFrame {
+public class Frm_cad_prof_view extends javax.swing.JFrame {
 
     
     private final Frm_cad_prof_controller controller;
@@ -21,7 +21,7 @@ public class Frm_cad_prof extends javax.swing.JFrame {
     /**
      * Creates new form Frm_cad_prof
      */
-    public Frm_cad_prof() {
+    public Frm_cad_prof_view() {
         initComponents();
         controller = new Frm_cad_prof_controller(this);
     //    controller = new Frm_cad_prof_controller(this);
@@ -207,20 +207,27 @@ public class Frm_cad_prof extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_cad_prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_cad_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_cad_prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_cad_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_cad_prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_cad_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frm_cad_prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm_cad_prof_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frm_cad_prof().setVisible(true);
+                new Frm_cad_prof_view().setVisible(true);
             }
         });
     }

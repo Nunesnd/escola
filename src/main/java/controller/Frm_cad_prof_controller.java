@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Professor;
-import view.Frm_cad_prof;
+import view.Frm_cad_prof_view;
 
 /**
  *
@@ -20,9 +20,9 @@ import view.Frm_cad_prof;
  */
 public class Frm_cad_prof_controller{
     
-    private Frm_cad_prof view;
+    private Frm_cad_prof_view view;
 
-    public Frm_cad_prof_controller(Frm_cad_prof view) {
+    public Frm_cad_prof_controller(Frm_cad_prof_view view) {
         this.view = view;
     }
     
@@ -40,7 +40,7 @@ public class Frm_cad_prof_controller{
             profDao.inserir(prof);
             JOptionPane.showMessageDialog(null, "Professor contratado com sucesso!");
         } catch (SQLException ex) {
-            Logger.getLogger(Frm_cad_prof.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frm_cad_prof_view.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }

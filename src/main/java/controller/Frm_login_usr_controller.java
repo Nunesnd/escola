@@ -11,17 +11,17 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import view.Frm_login_usr_view;
-import view.Frm_menu_principal;
+import view.Frm_menu_usuario;
 
 /**
  *
  * @author nunes
  */
-public class Frm_login_controller {
+public class Frm_login_usr_controller {
     
     private Frm_login_usr_view view;
 
-    public Frm_login_controller(Frm_login_usr_view view) {
+    public Frm_login_usr_controller(Frm_login_usr_view view) {
         this.view = view;
     }
 
@@ -37,7 +37,7 @@ public class Frm_login_controller {
         
         boolean existe = userDAO.autLoginPasswd(usrLog);
         
-        Frm_menu_principal telaPrincipal = new Frm_menu_principal();
+        Frm_menu_usuario telaPrincipal = new Frm_menu_usuario();
         telaPrincipal.setVisible(existe);
 
         

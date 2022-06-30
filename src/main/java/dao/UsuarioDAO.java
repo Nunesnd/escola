@@ -4,9 +4,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import model.Usuario;
 
 /**
@@ -33,13 +31,12 @@ public class UsuarioDAO {
     public boolean autLoginPasswd(Usuario usrLog) throws SQLException {
         
         String sql = "select * from usuario where usr_nome = '"+usrLog.getLogin()+"' and usr_senha = '"+usrLog.getSenha()+"';";
-                        
-        JOptionPane.showMessageDialog(null,"String sql é: "+sql);
-        
+                                
         PreparedStatement statement = connection.prepareStatement(sql);
         boolean cond = statement.execute();
 
         return cond;
+        
     }
 
 }

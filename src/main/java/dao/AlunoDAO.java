@@ -21,4 +21,16 @@ public class AlunoDAO {
         connection.close();
         
     }
+
+    public boolean autLoginPasswd(Aluno alnLog) throws SQLException {
+        
+        String sql = "select * from aluno where aln_login = '"+alnLog.getLogin()+"' and aln_senha = '"+alnLog.getSenha()+"';";        
+       
+        PreparedStatement statement = connection.prepareStatement(sql);
+        boolean cond = statement.execute();
+
+        return cond;
+    }
+    
+    
 }

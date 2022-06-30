@@ -8,16 +8,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Aluno;
-import view.Frm_cad_aln;
+import view.Frm_cad_aln_view;
 /**
  *
  * @author nunes
  */
 public class Frm_cad_aln_controller {
     
-    private Frm_cad_aln view;
+    private Frm_cad_aln_view view;
 
-    public Frm_cad_aln_controller(Frm_cad_aln view) {
+    public Frm_cad_aln_controller(Frm_cad_aln_view view) {
         this.view = view;
     }
     
@@ -38,7 +38,7 @@ public class Frm_cad_aln_controller {
             JOptionPane.showMessageDialog(null, "Aluno matriculado com sucesso!");
             
         } catch (SQLException ex) {
-            Logger.getLogger(Frm_cad_aln.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Frm_cad_aln_view.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

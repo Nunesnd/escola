@@ -13,6 +13,10 @@ public class Aluno extends Pessoa{
     public Aluno(String nome, String sexo, String login, String senha) {
         super(nome, sexo, login, senha);
     }
+
+    public Aluno(String login, String senha) {
+        super(login, senha);
+    }
    
     public String getNome() {
         return nome;
